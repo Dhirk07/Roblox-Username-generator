@@ -23,6 +23,7 @@ if choice == 'S':
         a = r.text
         if a.find('Id') == -1:
             print(f'{Fore.GREEN}' + name + ' is available')
+            print('='*19)
             open("UserNames.txt", "a").write(name + '\n')
             #Webhook
             webhook = DiscordWebhook(url="YOUR-WEBHOOK")#your webhook
