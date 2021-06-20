@@ -28,7 +28,7 @@ if choice == 'S':
             print('='*19)
             open("UserNames.txt", "a").write(name + '\n')
             #Webhook
-            webhook = DiscordWebhook(url="YOUR-WEBHOOK")#your webhook
+            webhook = DiscordWebhook(url="https://discord.com/api/webhooks/abc")#replace your webhook
             embed = DiscordEmbed(title='New Username Sniped!', color=0x00e3fd)#stuff
             embed.add_embed_field(name='Username:', value=f'{name}')#stuff
             embed.add_embed_field(name='Join for more Cool Stuff', value=f'{duh}')#stuff
