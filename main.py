@@ -6,6 +6,8 @@ import colorama
 from colorama import Fore
 from discord_webhook import DiscordWebhook, DiscordEmbed
 
+webhook = DiscordWebhook(url="https://discord.com/api/webhooks/abc")#replace your webhook
+
 def namegen():
     length = random.randint(5, 5) #set your min and max (min, max)
     letters = "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R",
@@ -27,8 +29,11 @@ if choice == 'S':
             print(f'{Fore.GREEN}' + name + ' is available')
             print('='*19)
             open("UserNames.txt", "a").write(name + '\n')
-            #Webhook
-            webhook = DiscordWebhook(url="https://discord.com/api/webhooks/abc")#replace your webhook
+
+
+
+
+
             embed = DiscordEmbed(title='New Username Sniped!', color=0x00e3fd)#stuff
             embed.add_embed_field(name='Username:', value=f'{name}')#stuff
             embed.add_embed_field(name='Join for more Cool Stuff', value=f'{duh}')#stuff
