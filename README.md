@@ -2,7 +2,7 @@
 
 Generates random roblox usernames. It will then check with roblox api to make sure that the username is not already in use and if its not is saves it to a text file and sends to a webhook.
 
-**Download it and run it, all usernames will be saved to a 'username.txt' file ready for you to copy and paste!**
+**Download it and run it, all usernames will be saved to a 'UserNames.txt' file ready for you to copy and paste!**
 
 Update!
 **Added Webhook Support Put webhook in line 9 on main.py**
