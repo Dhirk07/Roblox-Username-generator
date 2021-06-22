@@ -31,7 +31,7 @@ if choice == 'S':
         a = r.text
         if a.find('Id') == -1:
             print(f'{Fore.GREEN}' + name + ' is not taken! SignUp' + name + 'now!')
-            print('='*19)
+            print('='*36)
             open("UserNames.txt", "a").write(name + '\n')
 
 
