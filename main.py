@@ -26,8 +26,8 @@ if choice == 'S':
         r = requests.get("https://api.roblox.com/users/get-by-username?username=" + name)
         a = r.text
         if a.find('Id') == -1:
-            print(f'{Fore.GREEN}' + name + ' is not taken! SignUp' + name + 'now!')
-            print('='*36)
+            print(f'{Fore.GREEN}' + name + ' is not taken! SignUp ' + name + ' now!')
+            print('='*38)
             open("UserNames.txt", "a").write(name + '\n')
 
 
