@@ -20,6 +20,10 @@ SignUp = ('[Here!](https://www.roblox.com/signup)')
 
 choice = input(f'{Fore.RED}[S] Start\n[E] Exit\n\n'f'{Fore.RED}Choice: ')
 
+if choice == 'E':
+    while True:
+      print('Terminate me now cuz you dont want me to scrape :C')
+
 if choice == 'S':
     while True:
         name = namegen()
