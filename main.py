@@ -15,7 +15,7 @@ def namegen():
 
     return ''.join(random.choice(letters) for i in range(length))
 
-duh = ('[Click Me](https://discord.gg/VK9dg6qFWw)')
+signup = ('[Click Me](https://discord.gg/VK9dg6qFWw)')
 SignUp = ('[Here!](https://www.roblox.com/signup)')
 
 choice = input(f'{Fore.RED}[S] Start\n[E] Exit\n\n'f'{Fore.RED}Choice: ')
@@ -36,7 +36,7 @@ if choice == 'S':
 
             embed = DiscordEmbed(title='New Username Sniped!', color=0x00e3fd)#stuff
             embed.add_embed_field(name='Username:', value=f'{name}')#stuff
-            embed.add_embed_field(name='Join for more Cool Stuff', value=f'{duh}')#stuff
+            embed.add_embed_field(name='Join for more Cool Stuff', value=f'{signup}')#stuff
             embed.add_embed_field(name='Register Here!', value=f'{SignUp}')#stuff
             webhook.add_embed(embed)
             response = webhook.execute(remove_embeds=True)
