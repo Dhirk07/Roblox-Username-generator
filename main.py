@@ -34,7 +34,7 @@ if choice == 'S':
 
             embed = DiscordEmbed(title='New Username Sniped!', color=0x00e3fd)#stuff
             embed.add_embed_field(name='Username:', value=f'{name}')#stuff
-            embed.add_embed_field(name='Join for more Cool Stuff', value=f'{val}')#stuff
+            embed.add_embed_field(name='Cool Stuff', value=f'{val}')#stuff
             embed.add_embed_field(name='Register Here!', value=f'{SignUp}')#stuff
             webhook.add_embed(embed)
             response = webhook.execute(remove_embeds=True)
