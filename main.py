@@ -1,8 +1,6 @@
 #By Dhirk07
 #check my repo here (https://github.com/Dhirk07/Roblox-Username-generator)
-import requests
-import random
-import colorama
+import requests, colorama, random
 from colorama import Fore
 from discord_webhook import DiscordWebhook, DiscordEmbed
 
