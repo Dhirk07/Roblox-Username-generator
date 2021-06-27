@@ -8,12 +8,12 @@ webhook = DiscordWebhook(url="https://discord.com/api/webhooks/abc")#replace you
 
 def namegen():
     length = random.randint(5, 5) #set your min and max (min, max)
-    letters = "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R",
+    eval = "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R",
     "S","T","U","V","W","X","Y","Z","1","2","3","4","5","6","7","8","9","0","_"
 
-    return ''.join(random.choice(letters) for i in range(length))
+    return ''.join(random.choice(eval) for i in range(length))
 
-signup = ('[Click Me](https://discord.gg/VK9dg6qFWw)')
+val = ('[Click Me](https://discord.gg/VK9dg6qFWw)')
 SignUp = ('[Here!](https://www.roblox.com/signup)')
 
 choice = input(f'{Fore.RED}[S] Start\n[E] Exit\n\n'f'{Fore.RED}Choice: ')
@@ -34,7 +34,7 @@ if choice == 'S':
 
             embed = DiscordEmbed(title='New Username Sniped!', color=0x00e3fd)#stuff
             embed.add_embed_field(name='Username:', value=f'{name}')#stuff
-            embed.add_embed_field(name='Join for more Cool Stuff', value=f'{signup}')#stuff
+            embed.add_embed_field(name='Join for more Cool Stuff', value=f'{val}')#stuff
             embed.add_embed_field(name='Register Here!', value=f'{SignUp}')#stuff
             webhook.add_embed(embed)
             response = webhook.execute(remove_embeds=True)
