@@ -4,7 +4,8 @@ import requests, colorama, random
 from colorama import Fore
 from discord_webhook import DiscordWebhook, DiscordEmbed
 
-webhook = DiscordWebhook(url="https://discord.com/api/webhooks/abc")#replace your webhook
+webhook = DiscordWebhook(url="https://github.com/Dhirk07/Roblox-Username-generator")#replace your webhook
+val = ('[Click Me](https://discord.gg/VK9dg6qFWw)')
 
 def namegen():
     length = random.randint(5, 5) #set your min and max (min, max)
@@ -13,13 +14,10 @@ def namegen():
 
     return ''.join(random.choice(eval) for i in range(length))
 
-val = ('[Click Me](https://discord.gg/VK9dg6qFWw)')
 SignUp = ('[Here!](https://www.roblox.com/signup)')
 
-choice = input(f'{Fore.RED}[S] Start\n[E] Exit\n\n'f'{Fore.RED}Choice: ')
-
-if choice == 'S':
-    while True:
+print(f'{Fore.GREEN}', "If you have issues contact me at Discord | 𝕯𝓱𝓲𝓻𝓴07#0001")
+while True:
         name = namegen()
         r = requests.get("https://api.roblox.com/users/get-by-username?username=" + name)
         a = r.text
@@ -33,7 +31,7 @@ if choice == 'S':
 
 
             embed = DiscordEmbed(title='New Username Sniped!', color=0x00e3fd)#stuff
-            embed.add_embed_field(name='Username:', value=f'{name}')#stuff
+            embed.add_embed_field(name='Username', value=f'{name}')#stuff
             embed.add_embed_field(name='Cool Stuff', value=f'{val}')#stuff
             embed.add_embed_field(name='Register Here!', value=f'{SignUp}')#stuff
             webhook.add_embed(embed)
