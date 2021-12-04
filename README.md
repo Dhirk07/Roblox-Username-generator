@@ -18,4 +18,4 @@ If You have Problems Contact me at Discord `𝕯𝓱𝓲𝓻𝓴07#0001`
 
 Whats to come?
 
-- improve code
+- improve codes
