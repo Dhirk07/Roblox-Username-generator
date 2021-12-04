@@ -15,7 +15,7 @@ min = 5
 
 max = 6
 
-threads = 5
+threads = 1 ## i would reccomend u keep this at 1 IF u are using the send to webhook feature, if not u can turn this up, this will speed up the process of finding usernames.
 
 ## END OF CONFIG
 
