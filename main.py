@@ -50,7 +50,7 @@ def main():
                     setwebhook.add_embed(embed)
                     response = setwebhook.execute(remove_embeds=True)
             
-            
+          
 for noni in range(threads):
     try:
 
