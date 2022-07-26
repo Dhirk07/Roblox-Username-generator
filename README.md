@@ -5,5 +5,6 @@ Generates random roblox usernames. It will then check with roblox api to make su
 **Download it and run it, all usernames will be saved to a 'UserNames.txt' file ready for you to copy and paste!**
 
 # setup
+`pip install -r requirements.txt`
 `python main.py`
 [![Run on Repl.it](https://repl.it/badge/github/Dhirk07/Roblox-Username-generator)](https://repl.it/github/Dhirk07/Roblox-Username-generator)
