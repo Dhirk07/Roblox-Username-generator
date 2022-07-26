@@ -1,38 +1,61 @@
-#By Dhirk07
-#check my repo here (https://github.com/Dhirk07/Roblox-Username-generator)
-import requests, colorama, random
-from colorama import Fore
+import requests, colorama, random, threading
+from colorama import init, Fore, Back, Style
 from discord_webhook import DiscordWebhook, DiscordEmbed
 
-webhook = DiscordWebhook(url="https://github.com/Dhirk07/Roblox-Username-generator")#replace your webhook
-val = ('[Click Me](https://discord.gg/VK9dg6qFWw)')
+
+
+
+## CONFIG
+
+sendtowebhook = True ## (False, True) 
+
+yourwebhook = "https://discord.com/api/webhooks/1111"
+
+min = 5 
+
+max = 6
+
+threads = 1 ## i would reccomend u keep this at 1 IF u are using the send to webhook feature, if not u can turn this up, this will speed up the process of finding usernames.
+
+## END OF CONFIG
+
+
+
+
+init()
 
 def namegen():
-    length = random.randint(5, 5) #set your min and max (min, max)
+    length = random.randint(min, max)
     eval = "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R",
     "S","T","U","V","W","X","Y","Z","1","2","3","4","5","6","7","8","9","0","_"
 
     return ''.join(random.choice(eval) for i in range(length))
 
-SignUp = ('[Here!](https://www.roblox.com/signup)')
+if sendtowebhook:
+    setwebhook = DiscordWebhook(url=yourwebhook)
 
-print(f'{Fore.GREEN}', "If you have issues contact me at Discord | 𝕯𝓱𝓲𝓻𝓴07#0001")
-while True:
-        name = namegen()
-        r = requests.get("https://api.roblox.com/users/get-by-username?username=" + name)
-        a = r.text
-        if a.find('Id') == -1:
-            print(f'{Fore.GREEN}' + name + ' is not taken! SignUp ' + name + ' now!')
-            print('='*38)
-            open("UserNames.txt", "a").write(name + '\n')
+def main():
+    while True:
+            name = namegen()
+            r = requests.get("https://api.roblox.com/users/get-by-username?username=" + name)
+            a = r.text
+            if a.find('Id') == -1:
+                print(f'{Fore.GREEN}{name} Is Not Taken!')
+                print('='*38)
+                open("UserNames.txt", "a").write(name + '\n')
+                if sendtowebhook:
+                    embed = DiscordEmbed(title='New Username Sniped!', color=0x00e3fd)#stuff
+                    embed.add_embed_field(name='Username', value=f'{name}')#stuff
+                    embed.add_embed_field(name='Register Here!', value=f'[Here!](https://www.roblox.com/signup)')
+                    setwebhook.add_embed(embed)
+                    response = setwebhook.execute(remove_embeds=True)
+            
+            
+for noni in range(threads):
+    try:
 
+        t = threading.Thread(target=main)
+        t.start()
 
-
-
-
-            embed = DiscordEmbed(title='New Username Sniped!', color=0x00e3fd)#stuff
-            embed.add_embed_field(name='Username', value=f'{name}')#stuff
-            embed.add_embed_field(name='Cool Stuff', value=f'{val}')#stuff
-            embed.add_embed_field(name='Register Here!', value=f'{SignUp}')#stuff
-            webhook.add_embed(embed)
-            response = webhook.execute(remove_embeds=True)
+    except Exception as e:
+        print(e)
