@@ -39,7 +39,8 @@ def main():
             name = namegen()
             r = requests.get("https://api.roblox.com/users/get-by-username?username=" + name)
             a = r.text
-            if a.find('Id') == -1:
+            ## credits to @thatonehen https://github.com/thatonehen
+            if not a.find('{"success":false,"errorMessage":"User not found"}') == -1:
                 print(f'{Fore.GREEN}{name} Is Not Taken!')
                 print('='*38)
                 open("UserNames.txt", "a").write(name + '\n')
