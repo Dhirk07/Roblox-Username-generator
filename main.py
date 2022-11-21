@@ -1,6 +1,6 @@
 import requests, colorama, random, threading
 from colorama import init, Fore, Back, Style
-from discord_webhook import DiscordWebhook, DiscordEmbed
+from dhooks import Webhook, Embed
 
 
 
@@ -9,13 +9,13 @@ from discord_webhook import DiscordWebhook, DiscordEmbed
 
 sendtowebhook = True ## (False, True) 
 
-yourwebhook = "https://discord.com/api/webhooks/1111"
+yourwebhook = "https://discord.com/api/webhooks/1042731218904547328/JetfeYUKdBARUQMsrvlSI_M-sGhxvNl2i9JSO0eDL_arZGY965HKY18qDTBWyS43YknJ"
 
 min = 5 
 
 max = 6
 
-threads = 1 ## i would reccomend u keep this at 1 IF u are using the send to webhook feature, if not u can turn this up, this will speed up the process of finding usernames.
+threads = 2 ## i would reccomend u keep this at 1 IF u are using the send to webhook feature, if not u can turn this up, this will speed up the process of finding usernames.
 
 ## END OF CONFIG
 
@@ -32,7 +32,7 @@ def namegen():
     return ''.join(random.choice(eval) for i in range(length))
 
 if sendtowebhook:
-    setwebhook = DiscordWebhook(url=yourwebhook)
+    setwebhook = Webhook(url=yourwebhook)
 
 def main():
     while True:
@@ -45,18 +45,16 @@ def main():
                 print('='*38)
                 open("UserNames.txt", "a").write(name + '\n')
                 if sendtowebhook:
-                    embed = DiscordEmbed(title='New Username Sniped!', color=0x00e3fd)#stuff
-                    embed.add_embed_field(name='Username', value=f'{name}')#stuff
-                    embed.add_embed_field(name='Register Here!', value=f'[Here!](https://www.roblox.com/signup)')
-                    setwebhook.add_embed(embed)
-                    response = setwebhook.execute(remove_embeds=True)
+                    embed = Embed(title='New Username Sniped!', color=0x00e3fd)#stuff
+                    embed.add_field(name='Username', value=f'{name}')#stuff
+                    embed.add_field(name='Register Here!', value=f'[Here!](https://www.roblox.com/signup)')
+                    embed.add_field(name='Discord', value=f'[Join!](https://discord.gg/H5bcd7fTYb)')
+                    setwebhook.execute(embed=embed)
              
           
 for noni in range(threads):
     try:
-
         t = threading.Thread(target=main)
         t.start()
-
     except Exception as e:
         print(e)
