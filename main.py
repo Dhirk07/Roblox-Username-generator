@@ -9,7 +9,7 @@ from dhooks import Webhook, Embed
 
 sendtowebhook = True ## (False, True) 
 
-yourwebhook = "https://discord.com/api/webhooks/1042731218904547328/JetfeYUKdBARUQMsrvlSI_M-sGhxvNl2i9JSO0eDL_arZGY965HKY18qDTBWyS43YknJ"
+yourwebhook = "here"
 
 min = 5 
 
