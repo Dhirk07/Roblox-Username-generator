@@ -4,7 +4,6 @@ from dhooks import Webhook, Embed
 
 
 
-
 ## CONFIG
 
 sendtowebhook = True ## (False, True) 
