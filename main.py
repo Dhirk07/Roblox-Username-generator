@@ -1,9 +1,6 @@
 import requests, colorama, random, threading
 from colorama import init, Fore, Back, Style
 from dhooks import Webhook, Embed
-
-
-
 ## CONFIG
 
 sendtowebhook = True ## (False, True) 
@@ -49,7 +46,6 @@ def main():
                     embed.add_field(name='Register Here!', value=f'[Here!](https://www.roblox.com/signup)')
                     embed.add_field(name='Discord', value=f'[Join!](https://discord.gg/H5bcd7fTYb)')
                     setwebhook.execute(embed=embed)
-             
           
 for noni in range(threads):
     try:
