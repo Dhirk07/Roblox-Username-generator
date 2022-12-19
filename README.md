@@ -6,5 +6,10 @@ Generates random roblox usernames. It will then check with roblox api to make su
 
 # setup
 `pip3 install -r requirements.txt`
-`python3 main.py`
+
+
+`python3 main.py
+
+
+`
 `Run it on Replit`[![Run on Replit](https://replit.com/badge/github/Dhirk07/Roblox-Username-generator)](https://replit.com/github/Dhirk07/Roblox-Username-generator)
